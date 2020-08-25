@@ -1,0 +1,19 @@
+1)hive
+
+2)create table allstate(state string, district string, enroll string);
+
+3)insert into allstate values('abc','xyz','1');
+
+4)insert into allstate values('def','qwe','2');
+
+5)insert into allstate values('ghi','asd','3');
+
+6)create table state_part(district string,enroll string) PARTITIONED BY(state string);
+
+7)set hive.exec.dynamic.partition.mode=nonstrict;
+
+8)insert overwite table state_part PARTITION(state) SELECT district,enroll,state from allstate;
+
+9)exit
+
+10) hadoop fs -cat /user/hive/warehouse/state_part/state=abc/000000_0

@@ -1,0 +1,6 @@
+1)REATE EXTERNAL TABLE student ( stu INT, number STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ‘,’
+LOCATION ‘/user/bda1’;
+
+2)LOAD DATA INPATH ‘hdfs:/user/bda/sample1.txt’ INTO TABLE student;

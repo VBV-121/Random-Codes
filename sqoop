@@ -1,0 +1,25 @@
+mysql -u root -p
+cloudera
+
+2)show databases
+
+3)creat database {name of DB}
+
+4) use {name of DB}
+
+5)create table {name of table}( , , ,);
+
+6)insert into {name of table} values ( , , ,)
+ add a few rows
+ 
+7) exit
+
+8)sqoop inmport --connect jdbc:mysql:localhost/mysql --username root --password cloudera -- table {name of table} --m 1 --target-dir /user/{any new name for dir}
+
+9)hadoop fs -cat /user/{name of DB}/part-m-00000
+
+TO COPY A SINGLE ROW
+10)sqoop inmport --connect jdbc:mysql:localhost/mysql --username root --password cloudera -- table {name of table} --where {column name}={value} --m 1 --target-dir /user/{any new name for dir}
+
+TO EXPORT 
+11)sqoop export --connect jdbc:mysql:localhost/mysql --username root --password cloudera -- table {name of table} --m 1 --export-dir /user/{any new name for dir}

@@ -1,0 +1,15 @@
+1)create a txt file on desktop feed a data of year and temp 
+
+2)cat /home/cloudera/Desktop/filename.txt
+
+3)pig -x local 
+
+4)A= LOAD '/home/cloudera/Desktop/filename.txt' AS (year:chararray,temp:int);
+
+5)dump A
+
+6)B= GROUP A ALL;
+
+7)C= FOREACH B GENERATE MAX(A.temp);
+
+8)dump C
